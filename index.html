@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="mn">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Ишигтээ 💗</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;background:#fff0f5;color:#754257;font-family:Arial,sans-serif;text-align:center}
+
+main{max-width:850px;margin:auto;padding:22px}
+
+.hero,.paper{background:#fffaf7;border:2px solid white;border-radius:25px;padding:28px;margin-bottom:25px;box-shadow:0 8px 25px #d98ba622}
+
+.hero{background:linear-gradient(135deg,#ffdce9,#fff0c9,#eee3ff)}
+
+h1{font-family:Georgia,serif;font-size:clamp(35px,8vw,60px);color:#b34772}
+
+h2{color:#b34772;font-family:Georgia,serif}
+
+p{line-height:1.9}
+
+.sticker{font-size:36px}
+
+button{border:0;border-radius:30px;background:#d95d91;color:white;padding:14px 22px;font-size:16px;cursor:pointer;margin:8px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+
+.polaroid{background:white;padding:9px 9px 15px;box-shadow:0 5px 16px #9c58701c;transform:rotate(-2deg)}
+
+.polaroid:nth-child(2){transform:rotate(2deg);margin-top:15px}
+
+.polaroid img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#ffe0ec}
+
+.caption{padding:12px 2px 0;font-family:Georgia,serif;font-size:14px}
+
+.envelope{font-size:65px;cursor:pointer;border:0;background:transparent}
+
+#letter{display:none;text-align:left;background:#fff7fb;border:1px dashed #e6a1bd;border-radius:16px;padding:22px;line-height:2;margin-top:20px}
+
+#letter.show{display:block}
+
+#surprise{font-weight:bold;color:#b34772}
+
+footer{padding:20px;font-size:13px}
+
+@media(max-width:560px){main{padding:12px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.polaroid:nth-child(3){grid-column:1/-1;width:75%;justify-self:center}}
+
+</style>
+
+</head>
+
+<body>
+
+<main>
+
+  <header class="hero">
+
+    <div class="sticker">🎀 🌷 💗</div>
+
+    <p>ХАЙРТАЙ НАЙЗДАА</p>
+
+    <h1>Төрсөн өдрийн мэнд, Ишиг ээ! 💕</h1>
+
+    <p>Чамдаа зориулсан бяцхан дурсамжийн буланд тавтай морил.</p>
+
+    <button onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">Бидний дурсамж 📸</button>
+
+  </header>
+
+  <section class="paper" id="memories">
+
+    <h2>нандин мөчүүд 🌸</h2>
+
+    <p>Зураг бүрийн ард гоё дурсамж бий.</p>
+
+    <div class="gallery">
+
+      <div class="polaroid">
+
+        <img src="photo1.png" alt="Бидний зураг 1">
+
+        <div class="caption">дурсамж 💗</div>
+
+      </div>
+
+      <div class="polaroid">
+
+        <img src="photo2.png" alt="Бидний зураг 2">
+
+        <div class="caption">Инээд дүүрэн өдөр 🫶</div>
+
+      </div>
+
+      <div class="polaroid">
+
+        <img src="photo3.png" alt="Бидний зураг 3">
+
+        <div class="caption">Дахиад олон дурсамж ✨</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="paper">
+
+    <h2>Чамд зориулсан захиа 💌</h2>
+
+    <p>Дугтуй дээр дараад захиагаа нээгээрэй.</p>
+
+    <button class="envelope" onclick="openLetter()" aria-label="Захиа нээх">💌</button>
+
+    <p>Энд нэг бяцхан нууц байгаа...</p>
+
+    <article id="letter">
+
+      <h2>Хайрт Ишигтээ 💗</h2>
+
+      Төрсөн өдрийн мэнд хүргэе, миний хөөрхөн найз аа! 🥹💕
+
+      <p>Миний амьдралд байдагт, хамт инээж, элдвийг ярьж, гоё дурсамж бүтээдэгт чинь баярлалаа. Чамтай өнгөрүүлсэн мөч бүр надад үнэтэй шүү.</p>
+
+      <p>Шинэ насанд чинь аз жаргал, эрүүл энх, хайр, амжилт, хүссэн бүхний чинь биеллийг хүсье. Үргэлж өөрийнхөөрөө гэрэлтэж, инээмсэглэж яваарай.</p>
+
+      <p>Хэцүү үед чинь ч, баяртай үед чинь ч чиний хажууд байх найз нь шүү. Бидэнд цаашдаа ч олон гоё дурсамж хүлээж байгаа! 🌷</p>
+
+      <p style="text-align:right">=хайртай шүү! 💖</p>
+
+    </article>
+
+  </section>
+
+  <section class="paper" style="background:#fff0d9">
+
+    <div class="sticker">🎂 🎁 ✨</div>
+
+    <h2>Чамд нэг сюрприз байна!</h2>
+
+    <button onclick="surprise()">Энд дараарай 💝</button>
+
+    <p id="surprise"></p>
+
+  </section>
+
+  <footer>Ишигтээ хайраар бэлдэв · Үргэлж инээмсэглээрэй 💗</footer>
+
+</main>
+
+<script>
+
+function openLetter(){
+
+  document.getElementById('letter').classList.toggle('show');
+
+  for(let i=0;i<18;i++){
+
+    let h=document.createElement('span');
+
+    h.textContent=['💗','💕','🌸','✨'][Math.floor(Math.random()*4)];
+
+    h.style.cssText='position:fixed;left:'+Math.random()*95+'vw;top:90vh;font-size:25px;pointer-events:none;animation:float 2s forwards';
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>h.remove(),2000);
+
+  }
+
+}
+
+function surprise(){
+
+  document.getElementById('surprise').textContent='🌷 Ишиг минь, хүсэл бүхэн чинь биелж, өдөр бүр чинь аз жаргалаар дүүрэн байг! Төрсөн өдрийн мэнд! 💗🎉';
+
+}
+
+</script>
+
+<style>
+
+@keyframes float{to{transform:translateY(-90vh) rotate(25deg);opacity:0}}
+
+</style>
+
+</body>
+
+</html>
